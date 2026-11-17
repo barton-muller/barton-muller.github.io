@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>barton-muller</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; margin: 0; display: grid; place-items: center; min-height: 100vh; background: #fffcf0; color: #100f0f; }
+  main { max-width: 32rem; padding: 1.5rem; text-align: center; }
+  a { color: #24837b; }
+  @media (prefers-color-scheme: dark) { body { background: #100f0f; color: #cecdc3; } a { color: #3aa99f; } }
+</style>
+</head>
+<body>
+<!-- EDIT FREELY between here and the script. -->
+<main>
+  <h1>Hello world</h1>
+  <p id="msg"><a href="find-your-self/">Go Find Yourself</a></p>
+</main>
+<!-- END OF THE PART TO EDIT. Keep the script below: it sends people back to the app they came from after GitHub's
+     install page (see github.com/barton-muller/github-auth-relay). It does nothing on normal visits. -->
+<script>
+  (function () {
+    var q = location.search;
+    if (!q || !/[?&](installation_id|code|error)=/.test(q)) return;
+    var back = null;
+    try { back = localStorage.getItem('gh-auth-return'); } catch (e) {}
+    try {
+      var u = new URL(back);
+      // only ever forward inside this origin, and never back to this page
+      if (u.origin === location.origin && u.pathname !== location.pathname) {
+        document.getElementById('msg').textContent = 'Taking you back…';
+        location.replace(u.origin + u.pathname + q);
+        return;
+      }
+    } catch (e) {}
+    document.getElementById('msg').textContent = 'Signed in to GitHub, but this page does not know which app to return to. Open the app and try again.';
+  })();
+</script>
+</body>
+</html>
