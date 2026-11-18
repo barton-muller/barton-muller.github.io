@@ -27,6 +27,8 @@
   article p { margin: 0; }
   article img { border-radius: 6px; }
   article img.dark { background: #3b4a1f; padding: 2rem 30%; box-sizing: border-box; }
+  .pair { display: flex; gap: .5rem; margin-top: .5rem; }
+  .pair img { flex: 1; min-width: 0; object-fit: contain; }
   ul { padding-left: 1.1rem; }
   li { margin: .2rem 0; }
 </style>
@@ -68,7 +70,8 @@
   <p>Image tracing that understands the picture: SAM 2.1 / SAM 3 segmentation, one flat-colour SVG path per object.</p>
 </article>
 <article>
-  <a href="https://github.com/barton-muller/plotfair"><img src="img/plotfair.png" alt="plotfair"></a>
+  <a href="https://github.com/barton-muller/plotfair"><img src="img/plotfair-palette.png" alt="plotfair colour swatches by hue and saturation"></a>
+  <div class="pair"><img src="img/plotfair-bars.png" alt="bar chart in plotfair colours"><img src="img/plotfair-traces.png" alt="line traces in plotfair colours"></div>
   <h3><a href="https://github.com/barton-muller/plotfair">plotfair</a></h3>
   <p>Matplotlib and Plotly defaults, plus colour palettes and perceptual colormaps, for posters, presentations and reports.</p>
 </article>
