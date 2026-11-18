@@ -5,30 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Barton Muller</title>
 <style>
-  :root { --bg: #fffcf0; --fg: #100f0f; --mute: #6f6e69; --link: #24837b; --route: #b7b5ac; --node: #bc5215; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #100f0f; --fg: #cecdc3; --mute: #878580; --link: #3aa99f; --route: #403e3c; --node: #da702c; } }
+  :root { --bg: #fffcf0; --fg: #100f0f; --mute: #6f6e69; --link: #24837b; --panel: #f2f0e5; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #100f0f; --fg: #cecdc3; --mute: #878580; --link: #3aa99f; --panel: #1c1b1a; } }
   body { font: 16px/1.55 system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--fg); }
-  main { max-width: 44rem; margin: 0 auto; padding: 2rem 1.5rem 4rem 3rem; }
+  main { max-width: 60rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
   a { color: var(--link); }
-  img { max-width: 100%; display: block; }
-  small, .uni, .uni a { color: var(--mute); }
-  small { font-weight: normal; font-size: .8em; }
   h1 { font-size: 2.4rem; margin: 0 0 .5rem; }
-  section { position: relative; margin-top: 3rem; }
-  /* the route: one line down the page, a stop at each section, a fork for the live projects */
-  main { position: relative; }
-  main::before { content: ""; position: absolute; left: 1.2rem; top: 2.6rem; bottom: 4rem; border-left: 2px solid var(--route); }
-  section::before { content: ""; position: absolute; left: -1.95rem; top: .55rem; width: 12px; height: 12px; border-radius: 50%; background: var(--node); }
-  section.uni::before { background: var(--route); width: 8px; height: 8px; left: -1.8rem; }
-  h2, h3 { margin: 0 0 .5rem; }
-  h2 { font-size: 1.2rem; }
-  article { margin: 0 0 2rem; }
+  header p { max-width: 40rem; margin: 0 0 .5rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 2rem 1.5rem; margin-top: 2.5rem; }
   article h3 { font-size: 1.05rem; margin: .6rem 0 .1rem; }
   article p { margin: 0; }
-  article img { border-radius: 6px; }
-  article img.dark { background: #3b4a1f; padding: 2rem 30%; box-sizing: border-box; }
-  ul { padding-left: 1.1rem; }
+  small { font-weight: normal; font-size: .8em; color: var(--mute); }
+  small a { color: var(--mute); }
+  .img { display: block; aspect-ratio: 2 / 1; background: var(--panel); border-radius: 6px; overflow: hidden; }
+  .img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .img.green { background: #3b4a1f; }
+  .img.green img { object-fit: contain; padding: 1.2rem 2rem; box-sizing: border-box; }
+  .img.teal { background: #4a8f85; }
+  h2 { font-size: 1.1rem; margin: 3.5rem 0 .5rem; color: var(--mute); }
+  ul { padding-left: 1.1rem; color: var(--mute); }
   li { margin: .2rem 0; }
+  ul a { color: var(--mute); }
 </style>
 </head>
 <body>
@@ -37,51 +34,46 @@
 <header>
   <h1>Barton Muller</h1>
   <p>Hello, my name is Barton and I'm a biophysics researcher focused on single-molecule biophysics.</p>
-  <p>I have a passion for good and beautiful plots: see my Python package <a href="https://github.com/barton-muller/plotfair">plotfair</a>. I hate Overleaf and the default LaTeX aesthetic: see my <a href="https://github.com/barton-muller/vs-code-latex-report">VS Code TeX template</a>. I also like to get busy with other projects. They're very much vibe coded, but I think they could be of use to others anyway 😁</p>
-  <p>For travelling I made a trip planning web app, Go Find Yourself, which uses a GitHub backend for remote storage for static sites: pages-storage. I also love the game Pixies, so I made an online scorecard tracker, alternate rules and a bot you can practise against.</p>
+  <p>I also like to get busy with other projects. They're very much vibe coded, but I think they could be of use to others anyway 😁</p>
 </header>
 
-<section>
-<h2>Live</h2>
+<div class="cards">
 <article>
-  <a href="find-your-self/"><img class="" src="img/find-your-self.png" alt="find-your-self"></a>
+  <a class="img " href="find-your-self/"><img src="img/find-your-self.png" alt="find-your-self"></a>
   <h3><a href="find-your-self/">find-your-self</a> <small><a href="https://github.com/barton-muller/find-your-self">source</a></small></h3>
-  <p>Trip planner for routes that branch. Works offline; data stays on your device or in a GitHub repo, so AI can edit it.</p>
+  <p>For travelling: a trip planner for routes that branch. Works offline; data stays on your device or in a GitHub repo, so AI can edit it.</p>
 </article>
 <article>
-  <a href="pages-storage/"><img class="" src="img/pages-storage.svg" alt="pages-storage"></a>
+  <a class="img " href="pages-storage/"><img src="img/pages-storage.svg" alt="pages-storage"></a>
   <h3><a href="pages-storage/">pages-storage</a> <small><a href="https://github.com/barton-muller/pages-storage">source</a></small></h3>
-  <p>Remote storage for static sites, using each person's own GitHub account. The backend behind Go Find Yourself.</p>
+  <p>A GitHub backend for remote storage for static sites, using each person's own GitHub account. It powers Go Find Yourself.</p>
 </article>
 <article>
-  <a href="pixies/"><img class="dark" src="img/pixies.png" alt="pixies"></a>
+  <a class="img green" href="pixies/"><img src="img/pixies.png" alt="pixies"></a>
   <h3><a href="pixies/">pixies</a> <small><a href="https://github.com/barton-muller/pixies">source</a></small></h3>
-  <p>Score card tracker for the board game Pixies, alternate rules, and a bot to practise against.</p>
+  <p>I love the game Pixies: an online score card tracker, alternate rules, and a bot you can practise against.</p>
 </article>
-</section>
-
-<section>
-<h2>Other projects</h2>
 <article>
-  <a href="https://github.com/barton-muller/tracesmart"><img src="img/tracesmart.jpg" alt="tracesmart"></a>
+  <a class="img " href="https://github.com/barton-muller/plotfair"><img src="img/plotfair-traces.png" alt="plotfair"></a>
+  <h3><a href="https://github.com/barton-muller/plotfair">plotfair</a></h3>
+  <p>Good and beautiful plots: matplotlib and Plotly defaults, colour palettes and perceptual colormaps for posters, presentations and reports.</p>
+</article>
+<article>
+  <a class="img teal" href="https://github.com/barton-muller/vs-code-latex-report"><img src="img/vs-code-latex-report.png" alt="vs-code-latex-report"></a>
+  <h3><a href="https://github.com/barton-muller/vs-code-latex-report">vs-code-latex-report</a></h3>
+  <p>A hatred of Overleaf and the default LaTeX aesthetic: a TU Delft style report template with a ready-to-go VS Code workspace.</p>
+</article>
+<article>
+  <a class="img " href="https://github.com/barton-muller/tracesmart"><img src="img/tracesmart.jpg" alt="tracesmart"></a>
   <h3><a href="https://github.com/barton-muller/tracesmart">tracesmart</a></h3>
   <p>Image tracing that understands the picture: SAM 2.1 / SAM 3 segmentation, one flat-colour SVG path per object.</p>
 </article>
-<article>
-  <a href="https://github.com/barton-muller/plotfair"><img src="img/plotfair-traces.png" alt="random traces plotted in plotfair colours"></a>
-  <h3><a href="https://github.com/barton-muller/plotfair">plotfair</a></h3>
-  <p>Matplotlib and Plotly defaults, plus colour palettes and perceptual colormaps, for posters, presentations and reports.</p>
-</article>
-<ul>
-  <li><a href="https://github.com/barton-muller/vs-code-latex-report">vs-code-latex-report</a> — TU Delft style LaTeX report in VS Code. We have Overleaf at home.</li>
-  <li><a href="https://github.com/barton-muller/LeniaVisuals">LeniaVisuals</a> — Pygame visuals of Lenia (smooth Conway's Game of Life).</li>
-  <li><a href="https://github.com/barton-muller/studlemusic">studlemusic</a></li>
-</ul>
-</section>
+</div>
 
-<section class="uni">
-<h3>University (TU Delft, Nanobiology MSc)</h3>
+<h2>Other</h2>
 <ul>
+  <li><a href="https://github.com/barton-muller/studlemusic">studlemusic</a></li>
+  <li><a href="https://github.com/barton-muller/LeniaVisuals">LeniaVisuals</a> — Pygame visuals of Lenia (smooth Conway's Game of Life).</li>
   <li><a href="https://github.com/barton-muller/CompPhys1-MD">CompPhys1-MD</a> — Molecular dynamics of argon.</li>
   <li><a href="https://github.com/barton-muller/CompPhys2-Ising">CompPhys2-Ising</a> — Ising model.</li>
   <li><a href="https://github.com/barton-muller/CompPhys3-LBfluidsim">CompPhys3-LBfluidsim</a> — Lattice Boltzmann fluid simulations.</li>
@@ -92,7 +84,6 @@
   <li><a href="https://github.com/barton-muller/BRATZmriseg">BRATZmriseg</a> — Image segmentation with machine learning.</li>
   <li><a href="https://github.com/barton-muller/kmers">kmers</a> — Short exercise analysing bacterial sequences.</li>
 </ul>
-</section>
 </main>
 <!-- END OF THE PART TO EDIT. Keep the script below: it sends people back to the app they came from after GitHub's
      install page (see github.com/barton-muller/pages-storage). It does nothing on normal visits. -->
