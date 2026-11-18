@@ -5,19 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Barton Muller</title>
 <style>
-  :root { --bg: #fffcf0; --fg: #100f0f; --mute: #6f6e69; --link: #24837b; --panel: #f2f0e5; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #100f0f; --fg: #cecdc3; --mute: #878580; --link: #3aa99f; --panel: #1c1b1a; } }
+  :root { --bg: #f2f0e5; --card: #fffcf0; --border: #cfccbd; --fg: #100f0f; --mute: #6f6e69; --link: #24837b; --panel: #ebe8dc; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #100f0f; --card: #1c1b1a; --border: #343331; --fg: #cecdc3; --mute: #878580; --link: #3aa99f; --panel: #282726; } }
   body { font: 16px/1.55 system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--fg); }
   main { max-width: 60rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
   a { color: var(--link); }
   h1 { font-size: 2.4rem; margin: 0 0 .5rem; }
   header p { max-width: 40rem; margin: 0 0 .5rem; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 2rem 1.5rem; margin-top: 2.5rem; }
-  article h3 { font-size: 1.05rem; margin: .6rem 0 .1rem; }
-  article p { margin: 0; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .cards article { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; padding-bottom: 1rem; }
+  article h3 { font-size: 1.05rem; margin: .8rem 1rem .1rem; }
+  article p { margin: 0 1rem; }
   small { font-weight: normal; font-size: .8em; color: var(--mute); }
   small a { color: var(--mute); }
-  .img { display: block; aspect-ratio: 2 / 1; background: var(--panel); border-radius: 6px; overflow: hidden; }
+  .img { display: block; aspect-ratio: 2 / 1; background: var(--panel); border-bottom: 1px solid var(--border); overflow: hidden; }
   .img img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .img.green { background: #3b4a1f; }
   .img.green img { object-fit: contain; padding: 1.2rem 2rem; box-sizing: border-box; }
@@ -48,6 +49,11 @@
   <p>A GitHub backend for remote storage for static sites, using each person's own GitHub account. It powers Go Find Yourself.</p>
 </article>
 <article>
+  <a class="img" href="https://github.com/barton-muller/lesphotos"><img src="img/lesphotos.jpg" alt="lesphotos"></a>
+  <h3><a href="https://github.com/barton-muller/lesphotos">lesphotos</a></h3>
+  <p>A lightweight, folder-based photo library with offline thumbnail scrolling. Self-hosted, and it runs in ~50 MB on a 1 GB NAS.</p>
+</article>
+<article>
   <a class="img " href="https://github.com/barton-muller/plotfair"><img src="img/plotfair-traces.png" alt="plotfair"></a>
   <h3><a href="https://github.com/barton-muller/plotfair">plotfair</a></h3>
   <p>Good and beautiful plots: matplotlib and Plotly defaults, colour palettes and perceptual colormaps for posters, presentations and reports.</p>
@@ -61,11 +67,6 @@
   <a class="img " href="https://github.com/barton-muller/tracesmart"><img src="img/tracesmart.jpg" alt="tracesmart"></a>
   <h3><a href="https://github.com/barton-muller/tracesmart">tracesmart</a></h3>
   <p>Image tracing that understands the picture: SAM 2.1 / SAM 3 segmentation, one flat-colour SVG path per object.</p>
-</article>
-<article>
-  <a class="img" href="https://github.com/barton-muller/lesphotos"><img src="img/lesphotos.jpg" alt="lesphotos"></a>
-  <h3><a href="https://github.com/barton-muller/lesphotos">lesphotos</a></h3>
-  <p>A self-hosted, offline-first family photo library. Plain folders are the source of truth, and it runs in ~50 MB on a 1 GB NAS.</p>
 </article>
 <article>
   <a class="img green" href="pixies/"><img src="img/pixies.png" alt="pixies"></a>
