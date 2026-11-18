@@ -5,17 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>barton-muller</title>
 <style>
-  body { font: 16px/1.5 system-ui, sans-serif; margin: 0; display: grid; place-items: center; min-height: 100vh; background: #fffcf0; color: #100f0f; }
-  main { max-width: 32rem; padding: 1.5rem; text-align: center; }
+  body { font: 16px/1.5 system-ui, sans-serif; margin: 0 auto; max-width: 40rem; padding: 1.5rem; background: #fffcf0; color: #100f0f; }
   a { color: #24837b; }
-  @media (prefers-color-scheme: dark) { body { background: #100f0f; color: #cecdc3; } a { color: #3aa99f; } }
+  img { max-width: 100%; }
+  small, .uni { color: #6f6e69; }
+  @media (prefers-color-scheme: dark) { body { background: #100f0f; color: #cecdc3; } a { color: #3aa99f; } small, .uni { color: #878580; } }
 </style>
 </head>
 <body>
 <!-- EDIT FREELY between here and the script. -->
+<header>
+  <h1>barton-muller</h1>
+  <!-- <p>bio goes here</p> -->
+  <!-- <img src="hero.png" alt=""> -->
+</header>
+
 <main>
-  <h1>Hello world</h1>
-  <p id="msg"><a href="find-your-self/">Go Find Yourself</a></p>
+<section>
+<h2>Live</h2>
+<ul>
+  <li><a href="find-your-self/">find-your-self</a> — Trip planner for routes that branch. Works offline; data stays on your device or in a GitHub repo, so AI can edit it.</li> <small><a href="https://github.com/barton-muller/find-your-self">source</a></small>
+  <li><a href="pixies/">pixies</a> — Pixies score card.</li> <small><a href="https://github.com/barton-muller/pixies">source</a></small>
+  <li><a href="pages-storage/">pages-storage</a> — Remote storage for static sites, using each person's own GitHub account.</li> <small><a href="https://github.com/barton-muller/pages-storage">source</a></small>
+</ul>
+</section>
+
+<section>
+<h2>Projects</h2>
+<ul>
+  <li><a href="https://github.com/barton-muller/tracesmart">tracesmart</a> — Image tracing that understands the picture: SAM 2.1 / SAM 3 segmentation, one flat-colour SVG path per object.</li>
+  <li><a href="https://github.com/barton-muller/plotfair">plotfair</a> — Matplotlib defaults and colour sets made for posters, presentations and reports.</li>
+  <li><a href="https://github.com/barton-muller/LeniaVisuals">LeniaVisuals</a> — Pygame visuals of Lenia (smooth Conway's Game of Life).</li>
+  <li><a href="https://github.com/barton-muller/vs-code-latex-report">vs-code-latex-report</a> — TU Delft style LaTeX report in VS Code. We have Overleaf at home.</li>
+  <li><a href="https://github.com/barton-muller/studlemusic">studlemusic</a></li>
+</ul>
+</section>
+
+<section class="uni">
+<h3>University (TU Delft, Nanobiology MSc)</h3>
+<ul>
+  <li><a href="https://github.com/barton-muller/CompPhys1-MD">CompPhys1-MD</a> — Molecular dynamics of argon.</li>
+  <li><a href="https://github.com/barton-muller/CompPhys2-Ising">CompPhys2-Ising</a> — Ising model.</li>
+  <li><a href="https://github.com/barton-muller/CompPhys3-LBfluidsim">CompPhys3-LBfluidsim</a> — Lattice Boltzmann fluid simulations.</li>
+  <li><a href="https://github.com/barton-muller/POBS-ATPases">POBS-ATPases</a> — Physics of Biological Systems: ATPase project.</li>
+  <li><a href="https://github.com/barton-muller/2NeuronDemonstration">2NeuronDemonstration</a> — Periodicity in two-neuron systems (Modelling Dynamical Systems).</li>
+  <li><a href="https://github.com/barton-muller/2NeuronManim">2NeuronManim</a> — Working directory for the above, with Manim plots.</li>
+  <li><a href="https://github.com/barton-muller/AI-Notebooks">AI-Notebooks</a> — AP3751 homework notebooks.</li>
+  <li><a href="https://github.com/barton-muller/BRATZmriseg">BRATZmriseg</a> — Image segmentation with machine learning.</li>
+  <li><a href="https://github.com/barton-muller/kmers">kmers</a> — Short exercise analysing bacterial sequences.</li>
+</ul>
+</section>
 </main>
 <!-- END OF THE PART TO EDIT. Keep the script below: it sends people back to the app they came from after GitHub's
      install page (see github.com/barton-muller/pages-storage). It does nothing on normal visits. -->
